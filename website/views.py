@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, request
+from .forms import CommissionForm
 
 views = Blueprint("views", __name__)
 
@@ -21,7 +22,7 @@ def shop():
     form = CommissionForm()  # ✅ Create form instance
 
     if request.method == "POST" and form.validate_on_submit():
-        new_commission = Commission(
+        new_commission = CommissionForm(
             email=form.email.data,
             request=form.request.data,
             questions=form.questions.data,
@@ -39,11 +40,6 @@ def shop():
 @views.route("/about")
 def about():
     return render_template("about.html")
-
-
-
-
-
 
 
 # @views.route('/commission', methods=['GET', 'POST'])
