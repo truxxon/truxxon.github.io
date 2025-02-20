@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>{% block title %}Portfolio- My Website{% endblock %}</title>
-</head>
-<body>
-    {% block content %}
+{% extends "base.html" %}
+
+{% block title %}Portfolio- My Website{% endblock %}
+
+{% block content %}
     
     <div class="big_buddy">
         <h1>PORTFOLIO PAGE</h1>
@@ -22,15 +20,3 @@
     </div>
 
     {% endblock %}
-</body>
-</html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>{% block title %}My Website{% endblock %}</title>
-</head>
-<body>
-    {% block content %}{% endblock %}
-</body>
-</html> -->
