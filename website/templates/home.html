@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Home - My Website{% endblock %}
+
+{% block content %}
+    
+    <div class="big_buddy">
+        <h1>HOME PAGE</h1>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/shutterstock_1263296944.7.jpg') }}" alt="Image">
+        </div>
+
+        <div class="text-container">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste illum sed, nostrum enim harum ea incidunt repellendus corporis, hic inventore nisi quos aliquam explicabo eligendi excepturi exercitationem sequi rerum atLorem ipsum dolor sit amet consectetur adipisicing elit. Iste illum sed, nostrum enim harum ea incidunt repellendus corporis, hic inventore nisi quos aliquam explicabo eligendi excepturi exercitationem sequi rerum at Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste illum sed, nostrum enim harum ea incidunt repellendus corporis, hic inventore nisi quos aliquam explicabo eligendi excepturi exercitationem sequi rerum at
+            </p>
+        </div>
+    </div>
+{% endblock %}

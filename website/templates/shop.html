@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}Shop-My Website{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    
+    <div class="big_buddy">
+        <h1>SHOP PAGE</h1>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/depositphotos_38143799-stock-photo-e-commerce-shopping-cart-with.jpg') }}" alt="Image">
+        </div>
+        <div class="text-container">
+            <form action="/shop" method="POST">
+                {{ form.hidden_tag() }}  <!-- ✅ CSRF Token -->
+                
+                <div>
+                    <label for="email">email:</label>
+                    <input type="text" id="email" name="email" placeholder="youremail@blakety.com" required>
+                </div>
+                <br>
+                <div>
+                    <label for="request">request:</label>
+                    <input type="text" id="request" name="request" placeholder="Describe your commission request." required>
+                </div>
+                <br>
+                <div>
+                    <label for="questions">questions:</label>
+                    <input type="text" id="questions" name="questions" placeholder="Any questions for Gaiya?">
+                </div>
+                <br>
+                <div>
+                    <label for="deadline">product needed by:</label>
+                    <input type="date" id="deadline" name="deadline" required>
+                </div>
+                <br>
+                <div class="form-buttons">
+                    <button type="reset" class="reset-btn">Reset</button>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    {% endblock %}
+</body>
+</html>

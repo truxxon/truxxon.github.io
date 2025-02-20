@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}Portfolio- My Website{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    
+    <div class="big_buddy">
+        <h1>PORTFOLIO PAGE</h1>
+        <div class="image-container">
+            
+            <img src="{{ url_for('static', filename='images/Illustration-I-Burried-My-Dreams-In-That-Summer-Night-2022-DannieNiu-v2.jpg') }}" alt="Image">
+
+        </div>
+
+        <div class="text-container">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste illum sed, nostrum enim harum ea incidunt repellendus corporis, hic inventore nisi quos aliquam explicabo eligendi excepturi exercitationem sequi rerum atLorem ipsum dolor sit amet consectetur adipisicing elit. Iste illum sed, nostrum enim harum ea incidunt repellendus corporis, hic inventore nisi quos aliquam explicabo eligendi excepturi exercitationem sequi rerum at Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste illum sed, nostrum enim harum ea incidunt repellendus corporis, hic inventore nisi quos aliquam explicabo eligendi excepturi exercitationem sequi rerum at
+            </p>
+        </div>
+    </div>
+
+    {% endblock %}
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}My Website{% endblock %}</title>
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html> -->
