@@ -11,7 +11,7 @@ DB_NAME = 'my_database.db'
 
 def create_app():
 
-    app = Flask(__name__, template_folder="website/templates")
+    app = Flask(__name__)
 
     app.config['SECRET_KEY'] = 'ASDFGHJKL'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'

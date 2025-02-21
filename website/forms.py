@@ -8,3 +8,4 @@ class CommissionForm(FlaskForm):
     questions = StringField("Questions")
     deadline = DateField("Deadline", validators=[DataRequired()])
     submit = SubmitField("Submit")
+    
