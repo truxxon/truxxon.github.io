@@ -11,7 +11,7 @@ DB_NAME = 'my_database.db'
 
 def create_app():
 
-    app = Flask(__name__, template_folder="website/templates")
+    app = Flask(__name__)
 
     app.config['SECRET_KEY'] = 'ASDFGHJKL'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
@@ -22,6 +22,10 @@ def create_app():
     # from .auth import auth
 
     app.register_blueprint(views, url_prefix="/")
+    print("Registered routes:")
+    print(app.url_map)
+
+
     # app.register_blueprint(auth, url_prefix="/")  # ✅ Fixed Typo
 
     # from .models import Artwork, Commission
