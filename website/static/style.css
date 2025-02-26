@@ -1,28 +1,26 @@
 
 body {
-    background-image: url(images/istockphoto-1365629382-612x612.jpg)
+    background-image: url(images/green-leaves-ferns-leaf-background-spring-closeup-5k-3840x2160-2445.jpg)
 }
 
 nav {
-    background-color: rgb(255, 255, 255);
-    /* background-image: linear-gradient(to top, purple 0%, blue 100%); */
+    background-color: rgba(255, 255, 255, 0.757);
     width: 100%;
     height: 60px;  /* Controls navbar height */
     display: flex;
     justify-content: center;  /* Centers links horizontally */
     align-items: center;  /* Centers links vertically */
-    border-radius: 10px;
-    border: 5px solid rgb(20, 0, 60);
+    border: 5px solid rgba(235, 235, 235, 0.771);
 }
 
 .navbar a {
-    font: bold 20px 'arial narrow';
-    /* font-family: , sans-serif; */
-    border-radius: 20px;
-    /* background: radial-gradient(rgba(255, 0, 0, 0.475), rgb(166, 0, 255), blue); */
-    background-color: rgb(245, 227, 255);
+
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 10px 20px;
     text-decoration: none;
+    font-size: 21px;
+    color:rgb(0, 0, 0);
+    font-weight: bold;
 }
 
 
@@ -37,8 +35,22 @@ main {
 
 h1 {
 
-    color: rgb(20, 0, 60);
+    color: rgb(231, 255, 233);
     text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: 10px, black;
+
+}
+
+.header {
+
+    display: block;
+    /* background-color: rgba(0, 89, 19, 0.294); */
+    background-image: linear-gradient(rgba(0, 89, 19), rgb(132, 200, 132));
+    width: fit-content;
+    padding: 3px 20%;
+    border-radius: 10px;
+    margin-top: 15px;
 
 }
 
@@ -48,11 +60,10 @@ h1 {
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    width: 90%;
-    background-color: rgb(255, 255, 255);
+    width: 100%;
+    background-color: rgb(235, 235, 235);
     padding: 10px;
-    border-radius: 10px;
-    border: 5px solid rgb(20, 0, 60);
+    border: 7px solid rgba(255, 255, 255, 0.656);
 
 }
 
@@ -68,13 +79,14 @@ h1 {
 .image-container img {
     max-width: 800px; /* Adjust image size */
     height: auto;
-    border: 5px solid rgb(6, 0, 86);
+    border: 5px solid rgba(0, 0, 0, 0.46);
+    border-radius: 10px;
 }
 
 
 .text-container {
     max-width: 90%;
-    color: rgb(43, 43, 43); /* Text color for visibility */
+    color: rgb(0, 0, 0); /* Text color for visibility */
     margin-top: 10px;
     margin-bottom: 20px;
 }
@@ -98,5 +110,13 @@ form {
     display: flex;
     justify-content: space-between; /* Pushes buttons to opposite sides */
     width: 100%; /* Ensures it spans the full form width */
+}
+
+.big_buddy textarea {
+    width: 100%;  
+    max-width: 500px;  /* ✅ Prevents it from expanding beyond 500px */
+    min-height: 100px;  /* ✅ Sets a reasonable default height */
+    max-height: 250px;  /* ✅ Prevents it from growing too tall */
+    resize:none;  /* ✅ Allows resizing but within limits */
 }
 
