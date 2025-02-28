@@ -14,14 +14,12 @@
         <div class="text-container">
             <div class="form-container">
                 <form action="/shop" method="POST">
-                    {{ form.hidden_tag() }}  <!-- ✅ CSRF Token -->
-                    
+                    {{ form.hidden_tag() }}  <!-- ✅ CSRF Token -->  
                     <div>
                         <label for="email">email:</label>
                         <input type="email" id="email" name="email" placeholder="youremail@blankety.com" required>
                     </div>
                     <br>
-
                     <div>
                         <label for="request"><strong>request:</strong></label>
                         <textarea type="text" id="request" name="request" placeholder="Describe your commission request." wrap="hard" rows="5"></textarea>

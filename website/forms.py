@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, DateField, SubmitField
+from wtforms import StringField, TextAreaField, DateField, SubmitField, FileField
 from wtforms.validators import DataRequired, Email
 
 class CommissionForm(FlaskForm):
@@ -8,4 +8,10 @@ class CommissionForm(FlaskForm):
     questions = StringField("Questions")
     deadline = DateField("Deadline", validators=[DataRequired()])
     submit = SubmitField("Submit")
+
+class PortfolioForm(FlaskForm):
     
+    title = StringField("title")
+    style = StringField("style")
+    product_type = StringField("product_type")
+    artwork = FileField("artwork")

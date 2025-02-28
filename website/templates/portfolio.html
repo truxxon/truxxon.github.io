@@ -12,11 +12,21 @@
             <img src="{{ url_for('static', filename='images/Illustration-I-Burried-My-Dreams-In-That-Summer-Night-2022-DannieNiu-v2.jpg') }}" alt="Image">
         </div> -->
 
-        <div class="text-container">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste illum sed, nostrum enim harum ea incidunt repellendus corporis, hic inventore nisi quos aliquam explicabo eligendi excepturi exercitationem sequi rerum atLorem ipsum dolor sit amet consectetur adipisicing elit. Iste illum sed, nostrum enim harum ea incidunt repellendus corporis, hic inventore nisi quos aliquam explicabo eligendi excepturi exercitationem sequi rerum at Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste illum sed, nostrum enim harum ea incidunt repellendus corporis, hic inventore nisi quos aliquam explicabo eligendi excepturi exercitationem sequi rerum at
-            </p>
+
+        <div class="portfolio-container">
+            {% for item in portfolio %}
+                <div class="artwork_display">
+                    {% if item.artwork %}
+                        <img src="{{ url_for('views.serve_image', art_id=item.id) }}">
+                    {% endif %}
+                    <h2>{{ item.title }}</h2>
+                </div>
+            {% endfor %}
         </div>
+
+        <div class="text-container">
+            <p><a href="{{ url_for('views.portfolio_add')}}">ADDDDD</a></p>
+        </div> 
     </div>
 
     {% endblock %}

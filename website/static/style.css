@@ -120,3 +120,34 @@ form {
     resize:none;  /* ✅ Allows resizing but within limits */
 }
 
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.artwork_display {
+    width: 250px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: white;
+}
+
+.artwork_display img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.artwork_display h2 {
+    font-size: 1.2em;
+}
+
+.artwork_display p {
+    font-size: 1em;
+}
+
