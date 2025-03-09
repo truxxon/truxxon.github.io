@@ -72,15 +72,3 @@ def portfolio_add():
 def about():
     return render_template("about.html")
 
-
-# @views.route('/commission', methods=['GET', 'POST'])
-# def commission_request():
-#     form = CommissionForm()
-#     if form.validate_on_submit():  # Checks if form is submitted & valid
-#         new_commission = Commission(email=form.email.data, details=form.details.data)
-#         db.session.add(new_commission)  # Add to database
-#         db.session.commit()  # Save changes
-#         flash("Your commission request has been submitted!", "success")
-#         return redirect(url_for('views.commission_request'))  # Reload page after submission
-
-#     return render_template("commission.html", form=form)
