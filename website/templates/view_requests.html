@@ -6,16 +6,25 @@
     <div class="header"><h1>Add New Portfolio Item</h1></div>
 
     <div class="request-container">
-        {% for item in commission %}
-            <div class="request_display">
-                {% if item.request %}
-                    <p>Banana</p>
-                {% endif %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Request:</th>
+                    <th>Requested On:</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in commission %}
+                        {% if item.request %}
+                            <tr>
+                                <td>{{ item.request }}</td>
+                                <td>{{ item.request_date }}</td>
+                            </tr>
+                        {% endif %}
+                {% endfor %}
 
-                <!-- <h2>{{ item.title }}</h2> -->
-            </div>
-        {% endfor %}
+            </tbody>
+        </table>
     </div>
 
 {% endblock %}
-

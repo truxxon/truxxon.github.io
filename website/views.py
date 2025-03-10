@@ -46,8 +46,8 @@ def commission():
 
 @views.route("/view_requests")
 def view_requests():
-    form = CommissionForm()
-    return render_template("view_requests.html")
+    commission = Commission.query.all() # UHHHHHHHHH 
+    return render_template("view_requests.html", commission=commission)
 
 @views.route("/portfolio_add", methods=['GET', 'POST'])
 def portfolio_add():
