@@ -26,8 +26,8 @@ def serve_image(art_id):
 
     return "No Image", 404  # ✅ Return 404 if no image is found
 
-@views.route("/shop", methods=['GET', 'POST'])
-def shop():
+@views.route("/commission", methods=['GET', 'POST'])
+def commission():
     form = CommissionForm()  # ✅ Create form instance
 
     if request.method == "POST" and form.validate_on_submit():
@@ -40,9 +40,14 @@ def shop():
         db.session.add(new_commission)
         db.session.commit()
         flash("Your request has been submitted!", "success")
-        return redirect(url_for("views.shop"))  # Prevents resubmission
+        return redirect(url_for("views.commission"))  # Prevents resubmission
 
-    return render_template("shop.html", form=form)  # ✅ Passes form to template
+    return render_template("commission.html", form=form)  # ✅ Passes form to template
+
+@views.route("/view_requests")
+def view_requests():
+    form = CommissionForm()
+    return render_template("view_requests.html")
 
 @views.route("/portfolio_add", methods=['GET', 'POST'])
 def portfolio_add():

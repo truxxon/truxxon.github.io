@@ -1,11 +1,5 @@
 from . import db
 from sqlalchemy.sql import func
-
-# class Artwork(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     title = db.Column(db.String(150), unique=True)
-#     product_type = db.Column(db.String(150))
-#     art_style = db.Column(db.String(150))
  
 class Commission(db.Model):
     id = db.Column(db.Integer, primary_key=True)

@@ -1,18 +1,18 @@
 {% extends "base.html" %}
-{% block title %}Shop-My Website{% endblock %}
+{% block title %}Commission Page{% endblock %}
 
 
     {% block content %}
     
         <div class="header">
-            <h1>SHOP PAGE</h1>
+            <h1>COMMISSION PAGE</h1>
         </div>
         <!-- <div class="image-container">
             <img src="{{ url_for('static', filename='images/depositphotos_38143799-stock-photo-e-commerce-shopping-cart-with.jpg') }}" alt="Image">
         </div> -->
         <div class="text-container">
             <div class="form-container">
-                <form action="/shop" method="POST">
+                <form action="/commission" method="POST">
                     {{ form.hidden_tag() }}  <!-- ✅ CSRF Token -->  
                     <div>
                         <label for="email">email:</label>
@@ -39,6 +39,8 @@
                         <button type="submit" class="submit-btn">Submit</button>
                     </div>
                 </form>
+
+                <a href="{{ url_for('views.view_requests')}}">View Past Requests</a>
             </div>
         </div>
     
