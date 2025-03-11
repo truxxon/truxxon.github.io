@@ -1,1 +1,0 @@
-console.log('Hello to all Banana Pancakes of the world')

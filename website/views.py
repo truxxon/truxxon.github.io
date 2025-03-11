@@ -1,10 +1,12 @@
 import base64
-from flask import Blueprint, render_template, request, flash, redirect, url_for, Response
+from flask import Blueprint, render_template, request, flash, redirect, url_for, Response, session
 from . forms import CommissionForm, PortfolioForm
 from . models import Commission, Portfolio
 # from .models import Artwork
 from . import db
+from markupsafe import escape
 
+PASSWORD = "mypassword123"  # Change this to your desired password
 
 views = Blueprint("views", __name__)
 
@@ -32,10 +34,10 @@ def commission():
 
     if request.method == "POST" and form.validate_on_submit():
         new_commission = Commission(
-            email=form.email.data,
-            request=form.request.data,
-            questions=form.questions.data,
-            deadline=form.deadline.data
+            email=escape(form.email.data),
+            request=escape(form.request.data),
+            questions=escape(form.questions.data),
+            deadline=escape(form.deadline.data)
         )
         db.session.add(new_commission)
         db.session.commit()
@@ -44,13 +46,36 @@ def commission():
 
     return render_template("commission.html", form=form)  # ✅ Passes form to template
 
+@views.route("/logout")
+def logout():
+    session.pop("authenticated", None)  # Remove authentication
+    return redirect(url_for("views.login"))
+
+@views.route("/login", methods=["GET", "POST"])
+def login():
+    next_page = request.args.get("next")  
+    if request.method == "POST":
+        if request.form["password"] == PASSWORD:
+            session["authenticated"] = True  # Store in session
+            # return redirect(url_for("views.view_requests"))
+            return redirect(next_page or url_for("views.home"))
+        else:
+            return f"<a href='{ url_for('views.login')}'> Click to try again (loser)</a>"
+
+    return render_template("login.html")
+
 @views.route("/view_requests")
 def view_requests():
-    commission = Commission.query.all() # UHHHHHHHHH 
+    if not session.get("authenticated"):
+        return redirect(url_for("views.login", next=(url_for("views.view_requests"))))  # Redirect if not logged in
+    commission = Commission.query.all() 
     return render_template("view_requests.html", commission=commission)
 
 @views.route("/portfolio_add", methods=['GET', 'POST'])
 def portfolio_add():
+    if not session.get("authenticated"):
+        return redirect(url_for("views.login", next=(url_for("views.portfolio_add"))))  # Redirect if not logged in
+    
     form = PortfolioForm()  # ✅ Create form instance
 
     if request.method == "POST" and form.validate_on_submit():
@@ -62,9 +87,9 @@ def portfolio_add():
             artwork_bytes = None  # ✅ Handle case where no image is uploaded
 
         new_portfolio = Portfolio(
-            title =form.title.data,
-            style =form.style.data,
-            product_type =form.product_type.data,
+            title =escape(form.title.data),
+            style =escape(form.style.data),
+            product_type =escape(form.product_type.data),
             artwork = artwork_bytes 
         )
         db.session.add(new_portfolio)

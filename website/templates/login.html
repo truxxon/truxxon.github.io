@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Home - My Website{% endblock %}
+
+{% block content %}
+    
+        <div class="header">
+            <h1>LOG-IN PAGE</h1>
+        </div>
+
+
+        <form method="post">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <input type="password" name="password" placeholder="Enter Password">
+            <input type="submit" value="Login">
+        </form>
+
+
+{% endblock %}
