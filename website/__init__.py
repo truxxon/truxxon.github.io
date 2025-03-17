@@ -2,10 +2,13 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_wtf.csrf import CSRFProtect
-import os
+import os 
+from dotenv import load_dotenv
+
 
 
 # Initialize database and CSRF protection
+load_dotenv()
 db = SQLAlchemy()
 csrf = CSRFProtect()
 DB_NAME = 'portfolio.db'

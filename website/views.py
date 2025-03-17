@@ -5,8 +5,9 @@ from . models import Commission, Portfolio
 # from .models import Artwork
 from . import db
 from markupsafe import escape
+from os import getenv
 
-PASSWORD = "mypassword123"  # Change this to your desired password
+PASSWORD = getenv("GAIYA_PROTECTED_PASSWORD")  # Change this to your desired password
 
 views = Blueprint("views", __name__)
 
@@ -37,12 +38,11 @@ def commission():
             email=escape(form.email.data),
             request=escape(form.request.data),
             questions=escape(form.questions.data),
-            deadline=escape(form.deadline.data)
+            deadline=form.deadline.data
         )
         db.session.add(new_commission)
         db.session.commit()
-        flash("Your request has been submitted!", "success")
-        return redirect(url_for("views.commission"))  # Prevents resubmission
+        return render_template("request_success.html")  # Prevents resubmission
 
     return render_template("commission.html", form=form)  # ✅ Passes form to template
 
