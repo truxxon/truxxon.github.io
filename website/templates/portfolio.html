@@ -15,12 +15,13 @@
                     <img src="{{ url_for('views.serve_image', art_id=item.id) }}">
                 {% endif %}
                 <h2>{{ item.title }}</h2>
+                <h2>{{ item.product_type }}</h2>
             </div>
         {% endfor %}
     </div>
 
     <div class="text-container">
-        <p><a href="{{ url_for('views.portfolio_add')}}">ADDDDD</a></p>
+        <p><a href="{{ url_for('views.portfolio_add')}}">Admin Only: Add Portfolio</a></p>
     </div> 
 
     {% endblock %}
