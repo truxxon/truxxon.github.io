@@ -7,11 +7,11 @@
 
     <!-- Form Start -->
     <form action="{{ url_for('views.portfolio_add') }}" method="POST" enctype="multipart/form-data">
-        {{ form.hidden_tag() }}  <!-- ✅ CSRF Protection -->
+        {{ form.hidden_tag() }}  <!-- CSRF Protection -->
 
         <div class="form-group">
-            {{ form.title.label }}  <!-- ✅ Title Label -->
-            {{ form.title(class="form-control") }}  <!-- ✅ Input Box -->
+            {{ form.title.label }}  <!-- Title Label -->
+            {{ form.title(class="form-control") }}  <!-- Input Box -->
         </div>
 
         <div class="form-group">
@@ -26,7 +26,7 @@
 
         <div class="form-group">
             {{ form.artwork.label }}  
-            {{ form.artwork(class="form-control", accept="image/*") }}  <!-- ✅ Accepts image files only -->
+            {{ form.artwork(class="form-control", accept="image/*") }}  <!-- Accepts image files only -->
         </div>
 
         <div class="form-buttons">

@@ -76,15 +76,15 @@ def portfolio_add():
     if not session.get("authenticated"):
         return redirect(url_for("views.login", next=(url_for("views.portfolio_add"))))  # Redirect if not logged in
     
-    form = PortfolioForm()  # ✅ Create form instance
+    form = PortfolioForm()  # Create form instance
 
     if request.method == "POST" and form.validate_on_submit():
-        artwork_file = form.artwork.data  # ✅ Get the file
+        artwork_file = form.artwork.data  # Get the file
 
         if artwork_file:
-            artwork_bytes = artwork_file.read()  # ✅ Convert FileStorage to bytes
+            artwork_bytes = artwork_file.read()  # Convert FileStorage to bytes
         else:
-            artwork_bytes = None  # ✅ Handle case where no image is uploaded
+            artwork_bytes = None  # Handle case where no image is uploaded
 
         new_portfolio = Portfolio(
             title =escape(form.title.data),
@@ -96,7 +96,7 @@ def portfolio_add():
         db.session.commit()
         return redirect(url_for("views.portfolio"))  # Prevents resubmission
 
-    return render_template("portfolio_add.html", form=form)  # ✅ Passes form to template
+    return render_template("portfolio_add.html", form=form)  # Passes form to template
 
 @views.route("/about")
 def about():

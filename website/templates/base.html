@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Website{% endblock %}</title>
+    <title>{% block title %}My Website{% endblock %}</title> <!-- HTML Page Title (Will be replaced by child templates) -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -15,7 +15,7 @@
             <a href="/portfolio">Portfolio</a>
             <a href="/commission">Commission</a>
             <a href="/about">About</a>
-            <!-- <a href="/logout">Log Out</a> -->
+            <!-- <a href="/logout">Log Out</a> -- used during development to easily logout and test passcode-secure pages--> 
         </div>
     </nav>
 
@@ -25,12 +25,15 @@
             {% block content %}{% endblock %}
         </div>
     </main>
-
-    <!-- JavaScript -->
-    <script 
-        type="text/javascript"
-        src="{{ url_for('static', filename='index.js') }}">
-    </script>
+    
+    <footer>
+        <div class="contact-box">
+            <h2>Contact Us</h2>
+            <p><strong>Email:</strong> contact@example.com</p>
+            <p><strong>Phone:</strong> +1 234 567 890</p>
+            <p><strong>Address:</strong> 1234 Street Name, City, Country</p>
+        </div>
+    </footer>
 
 </body>
 </html>

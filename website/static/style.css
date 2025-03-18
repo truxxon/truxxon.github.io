@@ -58,6 +58,7 @@ h1 {
 
 }
 
+
 .big_buddy {
 
     display: flex;
@@ -70,6 +71,27 @@ h1 {
     padding: 10px;
     border: 7px solid rgba(255, 255, 255, 0.656);
 
+}
+
+/* Contact Box Styling */
+.contact-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 900px;
+    background-color: rgba(235, 235, 235, 0.722);
+    padding: 10px;
+    border: 5px solid rgba(255, 255, 255, 0.656);
+}
+
+.contact-box h2 {
+    margin-bottom: 10px;
+}
+
+.contact-box p {
+    margin: 5px 0;
 }
 
 .image-container {
@@ -96,6 +118,41 @@ h1 {
     margin-bottom: 20px;
 }
 
+.about {
+    display: flex;
+    align-items: center; /* Vertically align content */
+    justify-content: center;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    gap: 50px; /* Space between text and images */
+}
+
+/* Text Section */
+.about-text {
+    flex: 1; /* Takes up half of the space */
+    max-width: 600px;
+}
+
+.about-text p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Image Section */
+.about-images {
+    flex: 1; /* Takes up the other half */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between images */
+}
+
+.about-images img {
+    width: 100%; /* Make images responsive */
+    max-width: 500px; /* Prevents images from getting too large */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adds depth */
+}
 
 main img {
 
@@ -185,3 +242,32 @@ td {
     gap: 50px;
 
 }
+
+.banner {
+    
+    width: 100%; /* Makes it span the full width of the container */
+    max-width: 1200px; /* Optional: Set a max width */
+    margin: 0 auto; /* Centers it if inside another container */
+    overflow: hidden; /* Ensures no overflow issues */
+}
+
+.banner img {
+    margin-top: 15px;
+    width: 100%; /* Ensures the image stretches across the div */
+    height: auto; /* Maintains aspect ratio */
+    max-height: 400px;
+    display: block; /* Removes any unwanted spacing */
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #333; /* Dark background for the footer */
+    color: #fff; /* White text color */
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
