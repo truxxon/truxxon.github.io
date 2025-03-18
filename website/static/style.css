@@ -1,10 +1,10 @@
 
 body {
-    background-image: url(images/green-leaves-ferns-leaf-background-spring-closeup-5k-3840x2160-2445.jpg)
+    background-image: url(images/Treehouse_Background.png)
 }
 
 nav {
-    background-color: rgba(255, 255, 255, 0.757);
+    background-color: rgb(255, 255, 255);
     width: 100%;
     height: 60px;  /* Controls navbar height */
     display: flex;
@@ -67,7 +67,7 @@ h1 {
     margin: 0 auto;
     width: 100%;
     max-width: 850px;
-    background-color: rgb(235, 235, 235);
+    background-image: linear-gradient(rgba(245, 245, 245, 0.61), rgb(255, 255, 255));
     padding: 10px;
     border: 7px solid rgba(255, 255, 255, 0.656);
 
@@ -79,9 +79,9 @@ h1 {
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    width: 90%;
+    width: 100%;
     max-width: 900px;
-    background-color: rgba(235, 235, 235, 0.722);
+    background-color: rgb(255, 255, 255);
     padding: 10px;
     border: 5px solid rgba(255, 255, 255, 0.656);
 }
@@ -112,10 +112,24 @@ h1 {
 
 
 .text-container {
-    max-width: 90%;
-    color: rgb(0, 0, 0); /* Text color for visibility */
+    max-width: 70%;
+    color: rgb(10, 0, 76); /* Text color for visibility */
     margin-top: 10px;
     margin-bottom: 20px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* ✅ Centers content horizontally */
+    justify-content: center; /* ✅ Centers content vertically (optional) */
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.form-container form {
+    width: 50%;  /* Adjust as needed */
+    margin: auto;  /* ✅ Centers it horizontally */
 }
 
 .about {

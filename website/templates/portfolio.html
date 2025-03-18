@@ -4,20 +4,21 @@
 
 {% block content %}
         <div class="header">
-            <h1>PORTFOLIO PAGE</h1>
+            <h1>PORTFOLIO</h1>
         </div>
 
 
     <div class="portfolio-container">
         {% for item in portfolio %}
-            <div class="artwork_display">
-                {% if item.artwork %}
-                    <img src="{{ url_for('views.serve_image', art_id=item.id) }}">
+                {% if item.product_type == "emote" %}
+                    <div class="artwork_display">
+                        {% if item.artwork %}
+                            <img src="{{ url_for('views.serve_image', art_id=item.id) }}" alt="{{ item.title }}">
+                        {% endif %}
+                        <h3>{{ item.title }}</h3>
+                    </div>
                 {% endif %}
-                <h2>{{ item.title }}</h2>
-                <h2>{{ item.product_type }}</h2>
-            </div>
-        {% endfor %}
+            {% endfor %}
     </div>
 
     <div class="text-container">
