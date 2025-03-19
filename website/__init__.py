@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 load_dotenv()
 db = SQLAlchemy()
 csrf = CSRFProtect()
-DB_NAME = 'portfolio.db'
+DB_NAME = 'Gaiya_Website_Data.db'
 
 def create_app():
 
@@ -35,5 +35,4 @@ def create_database(app):
         db.create_all()
         print('Database Created Successfully!')
 
-     
-        
+

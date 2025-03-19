@@ -9,8 +9,25 @@
 
 
     <div class="portfolio-container">
+        <div class="artwork_header">
+            <h2>Emotes</h2>
+        </div>
         {% for item in portfolio %}
-                {% if item.product_type == "emote" %}
+            {% if item.product_type == "emote" %}
+                <div class="artwork_display">
+                    {% if item.artwork %}
+                        <img src="{{ url_for('views.serve_image', art_id=item.id) }}" alt="{{ item.title }}">
+                    {% endif %}
+                    <h3>{{ item.title }}</h3>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        <div class="artwork_header">
+            <h2>Profile Pictures</h2>
+        </div>
+            {% for item in portfolio %}
+                {% if item.product_type == "pfp" %}
                     <div class="artwork_display">
                         {% if item.artwork %}
                             <img src="{{ url_for('views.serve_image', art_id=item.id) }}" alt="{{ item.title }}">
@@ -19,6 +36,7 @@
                     </div>
                 {% endif %}
             {% endfor %}
+            
     </div>
 
     <div class="text-container">

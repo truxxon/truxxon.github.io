@@ -60,7 +60,7 @@ def login():
             # return redirect(url_for("views.view_requests"))
             return redirect(next_page or url_for("views.home"))
         else:
-            return f"<a href='{ url_for('views.login')}'> Click to try again (loser)</a>"
+            return render_template("login_failed.html")
 
     return render_template("login.html")
 
@@ -88,7 +88,6 @@ def portfolio_add():
 
         new_portfolio = Portfolio(
             title =escape(form.title.data),
-            style =escape(form.style.data),
             product_type =escape(form.product_type.data),
             artwork = artwork_bytes 
         )

@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, DateField, SubmitField, FileField, PasswordField
+from wtforms import StringField, TextAreaField, DateField, SubmitField, FileField, SelectField
 from wtforms.validators import DataRequired, Email
 from flask_wtf.file import FileField, FileAllowed, FileRequired, FileSize
 
@@ -14,11 +14,22 @@ class CommissionForm(FlaskForm):
 class PortfolioForm(FlaskForm):
 
     title = StringField("title")
-    style = StringField("style")
-    product_type = StringField("product_type")
+    product_type = SelectField(
+        "Commission Type", 
+        choices=[
+            ("emote", "Emote"),
+            ("vtuber", "Vtuber Model Feature"),
+            ("logo", "Logo Design"),
+            ("pfp", "Profile Picture")
+        ], 
+        validators=[DataRequired()]
+    )
+
+
+
     artwork = FileField("artwork", validators=[
         FileRequired(),
         FileAllowed(['jpg', 'jpeg', 'png', 'gif'], 'Images only!'),
-        FileSize(max_size= .5 * 1024 * 1024)  # .5 MB limit
+        FileSize(max_size= 10 * 1024 * 1024)  # .5 MB limit
     ])
 

@@ -12,14 +12,6 @@ class Commission(db.Model):
 class Portfolio(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(150), nullable=False)
-    style = db.Column(db.String(150), nullable=False)
-    product_type = db.Column(db.String(150), nullable=False)
-    artwork = db.Column(db.LargeBinary, nullable=False) 
-
-class Bob(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(150), nullable=False)
-    style = db.Column(db.String(150), nullable=False)
     product_type = db.Column(db.String(150), nullable=False)
     artwork = db.Column(db.LargeBinary, nullable=False) 
 
