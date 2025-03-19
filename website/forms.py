@@ -20,7 +20,9 @@ class PortfolioForm(FlaskForm):
             ("emote", "Emote"),
             ("vtuber", "Vtuber Model Feature"),
             ("logo", "Logo Design"),
-            ("pfp", "Profile Picture")
+            ("pfp", "Profile Picture"),
+            ("sketch", "Sketch"),
+            ("other", "Other"),
         ], 
         validators=[DataRequired()]
     )

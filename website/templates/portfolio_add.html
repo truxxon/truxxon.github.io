@@ -23,10 +23,11 @@
             {{ form.artwork.label }}  
             {{ form.artwork(class="form-control", accept="image/*") }}  <!-- Accepts image files only -->
         </div>
-
+        <br>
         <div class="form-buttons">
-            <button type="reset" class="reset-btn">Reset</button>
+            <button onclick="window.location.href='/portfolio'">Cancel</button>
             <button type="submit" class="submit-btn">Submit</button>
+            
         </div>
     </form>
 {% endblock %}

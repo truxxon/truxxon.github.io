@@ -11,10 +11,18 @@ nav {
     justify-content: center;  /* Centers links horizontally */
     align-items: center;  /* Centers links vertically */
     border: 5px solid rgba(235, 235, 235, 0.771);
+    
+}
+
+.logo img {
+    
+    height: 100px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+    display: block;
+
 }
 
 .navbar a {
-
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 10px 20px;
     text-decoration: none;
@@ -22,6 +30,7 @@ nav {
     color:rgb(0, 0, 0);
     font-weight: bold;
 }
+
 
 .big_buddy a {
     color: rgb(0, 4, 255);
