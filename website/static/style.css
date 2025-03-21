@@ -48,10 +48,11 @@ main {
 
 h1 {
 
-    color: rgb(231, 255, 233);
+    color: rgb(244, 252, 255);
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-shadow: 10px, black;
+    text-shadow: 2px 2px 7px #000000b0;
+    
 
 }
 
@@ -59,12 +60,19 @@ h1 {
 
     display: block;
     /* background-color: rgba(0, 89, 19, 0.294); */
-    background-image: linear-gradient(rgba(0, 89, 19), rgb(132, 200, 132));
+    background-image: linear-gradient(rgb(207 191 165), rgb(119 54 22));
     width: fit-content;
     padding: 3px 20%;
     border-radius: 10px;
     margin-top: 15px;
 
+}
+
+hr {
+    width: 80%;/* Makes it shorter */
+    margin-bottom: 40px;
+    border: none;
+    border-top: 2px solid #44444453;
 }
 
 
@@ -127,13 +135,17 @@ h1 {
     margin-bottom: 20px;
 }
 
+#commission-form-text {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .form-container {
     display: flex;
     flex-direction: column;
     align-items: center;  /* ✅ Centers content horizontally */
     justify-content: center; /* ✅ Centers content vertically (optional) */
     width: 100%;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
 }
 
 .form-container form {

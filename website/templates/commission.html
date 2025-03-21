@@ -7,19 +7,19 @@
         <div class="header">
             <h1>COMMISSION REQUEST</h1>
         </div>
-        <div class="text-container">
+        <div class="text-container" id="commission-form-text">
             <h2>I’m excited to create something unique just for you!</h2>
                 
             <p>Whether you need custom emotes, profile pictures, banners, overlays, or other digital designs, I’m here to make your ideas a reality. </p>
-            <br>
             <p>Fill out the form below with the details of your request, and I’ll get back to you as soon as possible. Let’s make something awesome together! </p>
         </div>
+        <hr>
         <div class="form-container">
             <form action="/commission" method="POST">
                 {{ form.hidden_tag() }}  <!-- ✅ CSRF Token -->  
                 <div>
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="youremail@blankety.com" required>
+                    <input type="email" id="email" name="email" placeholder="example@domain.com" required>
                 </div>
                 <br>
                 <div>
@@ -43,8 +43,9 @@
                 </div>
             </form>
 
-            <a href="{{ url_for('views.view_requests')}}">Admin Only: View Requests</a>
         </div>
+        <a href="{{ url_for('views.view_requests')}}">Admin Only: View Requests</a>
+        <br>
     
     {% endblock %}
 
