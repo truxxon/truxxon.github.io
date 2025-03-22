@@ -32,6 +32,6 @@ class PortfolioForm(FlaskForm):
     artwork = FileField("artwork", validators=[
         FileRequired(),
         FileAllowed(['jpg', 'jpeg', 'png', 'gif'], 'Images only!'),
-        FileSize(max_size= 10 * 1024 * 1024)  # .5 MB limit
+        FileSize(max_size= 23 * 1024 * 1024)  # .5 MB limit
     ])
 
