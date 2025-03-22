@@ -2,3 +2,4 @@ __pycache__/
 .venv
 website/static/images/
 instance/Gaiya_Website_Data.db
+*.zip
