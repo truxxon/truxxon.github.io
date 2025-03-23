@@ -2,7 +2,6 @@ import base64
 from flask import Blueprint, render_template, request, flash, redirect, url_for, Response, session
 from . forms import CommissionForm, PortfolioForm
 from . models import Commission, Portfolio
-# from .models import Artwork
 from . import db
 from markupsafe import escape
 from os import getenv

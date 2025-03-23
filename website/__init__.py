@@ -8,13 +8,12 @@ from dotenv import load_dotenv
 
 
 # Initialize database and CSRF protection
-load_dotenv()
+load_dotenv(override=True)
 db = SQLAlchemy()
 csrf = CSRFProtect()
 DB_NAME = 'Gaiya_Website_Data.db'
 
 def create_app():
-
     app = Flask(__name__, instance_relative_config=True)  # Tells Flask to use the instance folder
     app.config['SECRET_KEY'] = 'AbCCDEr'
     app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join(app.instance_path, DB_NAME)}"  # Correctly points to instance folder

@@ -9,10 +9,9 @@ class CommissionForm(FlaskForm):
     request = TextAreaField("Request Details", validators=[DataRequired()])
     questions = StringField("Questions")
     deadline = DateField("Deadline", validators=[DataRequired()])
-    submit = SubmitField("Submit")
+
 
 class PortfolioForm(FlaskForm):
-
     title = StringField("title")
     product_type = SelectField(
         "Commission Type", 
@@ -26,9 +25,6 @@ class PortfolioForm(FlaskForm):
         ], 
         validators=[DataRequired()]
     )
-
-
-
     artwork = FileField("artwork", validators=[
         FileRequired(),
         FileAllowed(['jpg', 'jpeg', 'png', 'gif'], 'Images only!'),

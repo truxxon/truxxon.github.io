@@ -32,7 +32,7 @@ nav {
 }
 
 
-.big_buddy a {
+.page-content a {
     color: rgb(0, 4, 255);
 }
 
@@ -76,7 +76,7 @@ hr {
 }
 
 
-.big_buddy {
+.page-content {
 
     display: flex;
     flex-direction: column;
@@ -210,7 +210,7 @@ form {
     width: 100%; /* Ensures it spans the full form width */
 }
 
-.big_buddy textarea {
+.page-content textarea {
     width: 100%;  
     max-width: 500px;  /* ✅ Prevents it from expanding beyond 500px */
     min-height: 100px;  /* ✅ Sets a reasonable default height */
