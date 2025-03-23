@@ -9,6 +9,19 @@
             <p><a href="{{ url_for('views.portfolio_add')}}">Admin Only: Add Portfolio Item</a></p>
     <div class="portfolio-container">
 
+        <div class="artwork_header">
+            <h2>Profile Pictures</h2>
+        </div>
+            {% for item in portfolio %}
+                {% if item.product_type == "pfp" %}
+                    <div class="artwork_display">
+                        {% if item.artwork %}
+                            <img src="{{ url_for('views.serve_image', art_id=item.id) }}" alt="{{ item.title }}">
+                        {% endif %}
+                        <h3>{{ item.title }}</h3>
+                    </div>
+                {% endif %}
+            {% endfor %}
 
         <div class="artwork_header">
             <h2>VTuber</h2>
@@ -37,20 +50,6 @@
                 </div>
             {% endif %}
         {% endfor %}
-
-        <div class="artwork_header">
-            <h2>Profile Pictures</h2>
-        </div>
-            {% for item in portfolio %}
-                {% if item.product_type == "pfp" %}
-                    <div class="artwork_display">
-                        {% if item.artwork %}
-                            <img src="{{ url_for('views.serve_image', art_id=item.id) }}" alt="{{ item.title }}">
-                        {% endif %}
-                        <h3>{{ item.title }}</h3>
-                    </div>
-                {% endif %}
-            {% endfor %}
 
         <!-- <div class="artwork_header">
             <h2>Logo Designs</h2>

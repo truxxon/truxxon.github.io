@@ -7,18 +7,25 @@
 
     <div class="request-container">
         <table>
+            <colgroup>
+                <col style="width: 50%;">
+                <col style="width: 25%;">
+                <col style="width: 25%;">
+            </colgroup>
             <thead>
                 <tr>
                     <th>Request:</th>
                     <th>Requested On:</th>
+                    <th>Due By:</th>
                 </tr>
             </thead>
             <tbody>
                 {% for item in commission %}
                         {% if item.request %}
                             <tr>
-                                <td>{{ item.request }}</td>
+                                <td><strong>{{ item.request }}</strong></td>
                                 <td>{{ item.request_date }}</td>
+                                <td>{{ item.deadline }}</td>
                             </tr>
                         {% endif %}
                 {% endfor %}

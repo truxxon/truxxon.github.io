@@ -171,7 +171,8 @@ hr {
 
 .about-text p {
     font-size: 18px;
-    color: #555;
+    color: rgb(10, 0, 76); /* Text color for visibility */
+
 }
 
 /* Image Section */
@@ -256,29 +257,6 @@ form {
     font-size: 1em;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    font-family: Arial, sans-serif;
-}
-
-th {
-    background-color: #cecece;
-    color: white;
-    padding: 12px;
-    text-align: left;
-    font-size: 16px;
-}
-
-/* Style table rows */
-td {
-    padding: 15px;
-    border-bottom: 1px solid #666666;
-    font-size: 14px;
-}
-
 .success-container {
 
     margin: 50px;
@@ -318,4 +296,23 @@ td {
 
     text-align: left;
 
+}
+
+table {
+    margin-top: 25px;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Enforces your widths */
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 12px;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+th {
+    background-color: #262222;
+    color: #ffffff;
 }
