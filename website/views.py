@@ -16,21 +16,21 @@ def home():
 
 @views.route("/portfolio")
 def portfolio():
-    portfolio = Portfolio.query.all()  # ✅ Fetch all artwork from the database
-    return render_template("portfolio.html", portfolio=portfolio)  # ✅ Pass the data to the template
+    portfolio = Portfolio.query.all()  # Fetch all artwork from the database
+    return render_template("portfolio.html", portfolio=portfolio)  # Pass the data to the template
 
 @views.route("/image/<int:art_id>")
 def serve_image(art_id):
-    item = Portfolio.query.get_or_404(art_id)  # ✅ Get the image by ID
+    item = Portfolio.query.get_or_404(art_id)  # Get the image by ID
 
-    if item.artwork:  # ✅ If artwork exists, serve it
-        return Response(item.artwork, mimetype="image/jpeg")  # ✅ Adjust MIME type if needed
-
-    return "No Image", 404  # ✅ Return 404 if no image is found
+    if item.artwork:  #  If artwork exists, serve it
+        return Response(item.artwork, mimetype="image/jpeg")  
+    
+    return "No Image", 404  # Return 404 if no image is found
 
 @views.route("/commission", methods=['GET', 'POST'])
 def commission():
-    form = CommissionForm()  # ✅ Create form instance
+    form = CommissionForm()  # Create form instance
 
     if request.method == "POST" and form.validate_on_submit():
         new_commission = Commission(

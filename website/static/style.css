@@ -226,7 +226,6 @@ form {
     margin-top: 20px;
 }
 
-
 .artwork_display {
     width: 230px;
     padding: 15px;
@@ -303,6 +302,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed; /* Enforces your widths */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 th, td {
