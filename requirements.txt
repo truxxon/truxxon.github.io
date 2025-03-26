@@ -1,7 +1,7 @@
-flask==3.1.0
-sqlalchemy==2.0.38
-flask-sqlalchemy==3.1.1
-flask-wtf==1.2.2
-wtforms==3.2.1
-email-validator==2.2.0
-python-dotenv==1.0.1
+flask
+sqlalchemy
+flask-sqlalchemy
+flask-wtf
+wtforms
+email-validator
+python-dotenv
