@@ -43,7 +43,7 @@ def commission():
         db.session.commit()
         return render_template("request_success.html")  # Prevents resubmission
 
-    return render_template("commission.html", form=form)  # ✅ Passes form to template
+    return render_template("commission.html", form=form)  # Passes form to template
 
 @views.route("/logout")
 def logout():
@@ -87,7 +87,7 @@ def portfolio_add():
 
         new_portfolio = Portfolio(
             title =escape(form.title.data),
-            product_type =escape(form.product_type.data),
+            product_type =form.product_type.data,
             artwork = artwork_bytes 
         )
         db.session.add(new_portfolio)
