@@ -21,28 +21,23 @@ def portfolio():
 
 @views.route("/image/<int:art_id>")
 def serve_image(art_id):
-    item = Portfolio.query.get_or_404(art_id)  # Get the image by ID
-
+    item = Portfolio.query.get_or_404(art_id)  # Get the image by IDA
     if item.artwork:  #  If artwork exists, serve it
         return Response(item.artwork, mimetype="image/jpeg")  
-    
     return "No Image", 404  # Return 404 if no image is found
 
 @views.route("/commission", methods=['GET', 'POST'])
 def commission():
     form = CommissionForm()  # Create form instance
-
     if request.method == "POST" and form.validate_on_submit():
         new_commission = Commission(
             email=escape(form.email.data),
             request=escape(form.request.data),
             questions=escape(form.questions.data),
-            deadline=form.deadline.data
-        )
+            deadline=form.deadline.data)
         db.session.add(new_commission)
         db.session.commit()
         return render_template("request_success.html")  # Prevents resubmission
-
     return render_template("commission.html", form=form)  # Passes form to template
 
 @views.route("/logout")
@@ -60,7 +55,6 @@ def login():
             return redirect(next_page or url_for("views.home"))
         else:
             return render_template("login_failed.html")
-
     return render_template("login.html")
 
 @views.route("/view_requests")
@@ -74,26 +68,20 @@ def view_requests():
 def portfolio_add():
     if not session.get("authenticated"):
         return redirect(url_for("views.login", next=(url_for("views.portfolio_add"))))  # Redirect if not logged in
-    
     form = PortfolioForm()  # Create form instance
-
     if request.method == "POST" and form.validate_on_submit():
         artwork_file = form.artwork.data  # Get the file
-
         if artwork_file:
             artwork_bytes = artwork_file.read()  # Convert FileStorage to bytes
         else:
             artwork_bytes = None  # Handle case where no image is uploaded
-
         new_portfolio = Portfolio(
             title =escape(form.title.data),
             product_type =form.product_type.data,
-            artwork = artwork_bytes 
-        )
+            artwork = artwork_bytes )
         db.session.add(new_portfolio)
         db.session.commit()
         return redirect(url_for("views.portfolio"))  # Prevents resubmission
-
     return render_template("portfolio_add.html", form=form)  # Passes form to template
 
 @views.route("/about")
