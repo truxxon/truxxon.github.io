@@ -6,8 +6,11 @@
         <div class="header">
             <h1>PORTFOLIO</h1>
         </div>
-            <p><a href="{{ url_for('views.portfolio_add')}}">Admin Only: Add Portfolio Item</a></p>
+            <h2 id="intro-text">
+                A selection of custom digital art created for streamers and online creators — including Twitch emotes, VTuber models, profile pictures, and more.
+            </h2>
     <div class="portfolio-container">
+        
 
         <div class="artwork_header">
             <h2>Profile Pictures</h2>
@@ -94,6 +97,7 @@
             {% endfor %}
             
     </div>
+    <p><a href="{{ url_for('views.portfolio_add')}}">Admin Only: Add Portfolio Item</a></p>
 
   
 
