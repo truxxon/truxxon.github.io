@@ -96,30 +96,6 @@ def portfolio_add():
 
     return render_template("portfolio_add.html", form=form)  # Passes form to template
 
-@views.route("/portfolio_delete", methods=['GET', 'POST'])
-def portfolio_delete():
-    if not session.get("authenticated"):
-        return redirect(url_for("views.login", next=url_for("views.portfolio_delete")))
-
-    form = PortfolioDeleteForm()
-
-    if request.method == "POST" and form.validate_on_submit():
-        title = escape(form.title.data)
-        product_type = form.product_type.data
-
-        # Try to find the matching item
-        item = Portfolio.query.filter_by(title=title, product_type=product_type).first()
-
-        if item:
-            db.session.delete(item)
-            db.session.commit()
-            return render_template("delete_success.html", title=title)
-        else:
-            return render_template("delete_failed.html", title=title)
-
-    return render_template("portfolio_delete.html", form=form)
-
-
 @views.route("/about")
 def about():
     return render_template("about.html")

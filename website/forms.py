@@ -30,8 +30,3 @@ class PortfolioForm(FlaskForm):
         FileAllowed(['jpg', 'jpeg', 'png', 'gif'], 'Images only!'),
         FileSize(max_size= 25 * 1024 * 1024)  # 25 MB limit
     ])
-
-class PortfolioDeleteForm(FlaskForm):
-    title = StringField("Title", validators=[DataRequired()])
-    product_type = StringField("Product Type", validators=[DataRequired()])
-    submit = SubmitField("Delete")
