@@ -2,4 +2,6 @@ __pycache__/
 .venv
 website/static/images/
 instance/Gaiya_Website_Data.db
+instance/part_aa
+instance/part_ab
 *.zip
